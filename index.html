@@ -772,13 +772,13 @@
             downloadBtn.disabled = true;
 
             try {
-                const videoBlob = new Blob(videoChunks, { type: 'video/webm' });
+                const videoBlob = new Blob(videoChunks, { type: 'video/mp4' });
                 const videoURL = URL.createObjectURL(videoBlob);
                 
                 const link = document.createElement('a');
                 const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
                 link.href = videoURL;
-                link.download = `visualizer-${selectedQuality}p-${timestamp}.webm`;
+                link.download = `visualizer-${selectedQuality}p-${timestamp}.mp4`;
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
